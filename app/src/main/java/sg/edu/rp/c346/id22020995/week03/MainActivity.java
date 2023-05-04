@@ -34,6 +34,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code for the action
                 String stringResponse = etInput.getText().toString();
+                int checkedRadioId = rgGender.getCheckedRadioButtonId();
+                if(checkedRadioId == R.id.radioButtonGenderMale){
+                    // Write the code when male selected
+                    // if male selected add "He says" to TextView
+                    stringResponse = "He says " + stringResponse;
+                }
+                else{
+                    // Write the code when female selected
+                    // if female selected add "She says" to TextView
+                    stringResponse = "She says " + stringResponse;
+                }
                 tvDisplay.setText(stringResponse);
             }
         });
@@ -57,24 +68,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnDisplay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code for the action
-                String stringResponse = etInput.getText().toString();
-                int checkedRadioId = rgGender.getCheckedRadioButtonId();
-                if(checkedRadioId == R.id.radioButtonGenderMale){
-                    // Write the code when male selected
-                    // if male selected add "He says" to TextView
-                    stringResponse = "He says " + stringResponse;
-                }
-                else{
-                    // Write the code when female selected
-                    // if female selected add "She says" to TextView
-                    stringResponse = "She says " + stringResponse;
-                }
-                tvDisplay.setText(stringResponse);
-            }
-        });
     }
 }
